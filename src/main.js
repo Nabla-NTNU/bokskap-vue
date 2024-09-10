@@ -9,10 +9,13 @@ import { createWebHistory, createRouter } from 'vue-router';
 
 import MainContent from './views/MainContent.vue';
 import Skapregler from '@/markdown/skapregler.md'
+import Glemt from './views/Glemt.vue'
 
 const routes = [
   {path: '/', component: MainContent},
-  {path: '/skapregler', component: Skapregler}
+  {path: '/skapregler', component: Skapregler},
+  {path: '/glemt', component: Glemt}
+
 ]
 
 const router = createRouter({
