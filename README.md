@@ -42,7 +42,13 @@ You'll need to have `supabase` and `docker` (possibly also `docker-compose`) ins
 
 - install `docker` and `supabase` on your system.
 - run `supabase start`
-- copy the ANON key to `../src/lib/supabaseClient.js` (if you lost it run `supabase status`)
+- create `.env` and insert the following (you'll find the ANON key by running `supabase status`):
+
+```toml
+VITE_SUPABASE_URL='http://localhost:54321'
+VITE_SUPABASE_ANON_KEY='<ANON KEY>'
+```
+
 - start the frontend: `npm install && npm run dev`
 - enjoy bokskap frontend at `http://localhost:5174` (or something like that)
 - enjoy bokskap database dashboard at `http://localhost:54323` (or something like that)
