@@ -1,5 +1,6 @@
 ## Bokskapreglement ved NV-fakultetet
 Du er underlagt de reglene som gjaldt da du registrerte skapet.
+
 *Oppdatert 2019*
 
 1. Kun bokskap som står tomme, uten registrert bruker og uten lås, kan tas i bruk. Studenten må selv skaffe hengelås til skapet før registering.
