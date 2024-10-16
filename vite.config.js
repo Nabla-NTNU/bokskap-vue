@@ -12,6 +12,9 @@ export default defineConfig({
     }),
     Markdown({ /* options */ }),
   ],
+  css: {
+    postcss: './postcss.config.js', // Point to the correct PostCSS config file if needed
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

@@ -25,3 +25,9 @@ import LockerTable from '@/components/LockerTable.vue';
     <h2>Skap:</h2>
     <LockerTable />
 </template>
+
+<script>
+export default {
+  name: 'HjemView',
+}
+</script>
