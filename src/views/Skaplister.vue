@@ -1,18 +1,13 @@
 <script setup>
-
-import Panel from 'primevue/panel';
 import LockerTable from '@/components/LockerTable.vue';
-
-import Hjem from '../components/Hjem.vue';
 </script>
 
-
 <template>
-    <Hjem/>
+    <LockerTable />
 </template>
 
 <script>
 export default {
-  name: 'HjemView',
+  name: 'SkaplisterView',
 }
 </script>
