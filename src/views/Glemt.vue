@@ -27,10 +27,9 @@ const sendEmail = () => {
             <InputText id="username" v-model="username" />
             <label for="username">NTNU-brukernavn</label>
         </FloatLabel>
-        <Button label="Send e-post"></Button>
+        <Button class="text-m bg-green-300 p-3" label="Send e-post"></Button>
     </form>
 </template>
-
 
 <script>
 export default {
