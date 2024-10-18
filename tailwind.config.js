@@ -396,6 +396,7 @@ export default {
     },
     boxShadow: {
       default: '0px 8px 13px -3px rgba(0, 0, 0, 0.07)',
+      pink: '4px 12px 20px -12px var(--pink-800)',
       1: '0px 1px 3px rgba(0, 0, 0, 0.08)',
       2: '0px 1px 4px rgba(0, 0, 0, 0.12)',
     },

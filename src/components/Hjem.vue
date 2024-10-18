@@ -29,7 +29,7 @@ const register = () => {
 
 
         <!-- Form Section -->
-        <div class="bg-pink-500 text-white px-8 pt-4 pb-8 rounded-[32px]">
+        <div class="bg-pink-500 shadow-pink text-white px-8 pt-4 pb-8 rounded-[32px]">
             <div class="text-dark font-poppins text-title-1 px-10 mb-6">Reserver her</div>
             
             <form @submit.prevent="register" class="flex flex-col space-y-4">
