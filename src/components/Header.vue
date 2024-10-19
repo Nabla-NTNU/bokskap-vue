@@ -7,7 +7,6 @@
     <!-- Links in header -->
     <nav class="flex">
         <router-link to="/skapregler" class="content-center mr-4">Skapregler</router-link>
-        <router-link to="/glemt" class="content-center mx-4">Glemt skapnummer?</router-link>
         <router-link to="/avregistrering" class="content-center mx-4">Avregistrer skap</router-link>
         <router-link to="/admin">
         <img class="h-6" src="../assets/images/admin.svg" alt="admin">

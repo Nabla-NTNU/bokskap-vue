@@ -38,7 +38,7 @@ const register = () => {
                     class="bg-blue-25 text-gray-700 text-l p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-700"
                     v-model="username" 
                     autofocus
-                    placeholder="Brukernavn" 
+                    placeholder="NTNU-brukernavn" 
                     required 
                 />
                 
@@ -66,11 +66,12 @@ const register = () => {
                         style="width: 50%;"
                     />
                 </div>
+                <router-link to="/glemt" class="content-center text-l font-poppins text-white">Glemt skapnummer?</router-link>
                 <!-- Register Button Aligned to the Right -->
                 <div class="text-right">
                     <button 
                         type="submit" 
-                        class="text-white px-4 py-2 rounded-md text-subtitle-1 mt-4" 
+                        class="text-white px-4 py-2 rounded-md text-subtitle-1" 
                         :disabled="!username.trim() || !selected || locker === null || locker < 1"
                         :class="{
                             'bg-gray-300': !username.trim() || !selected || locker === null || locker < 1,
@@ -96,10 +97,15 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield; /* Firefox */
 }
-:invalid {
+input:invalid, select:invalid {
   color:  theme('colors.gray.500');
-  font-size: 18px;
+  font-size: 20px;
 }
+input:valid, select:valid {
+  color:  theme('colors.gray.900');
+  font-size: 20px;
+}
+
 ::placeholder {
   color:  theme('colors.gray.500');
 }

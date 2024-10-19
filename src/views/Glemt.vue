@@ -1,8 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import InputText from 'primevue/inputtext';
-import FloatLabel from 'primevue/floatlabel';
-import Button from 'primevue/button';
 
 // Define username as a reactive variable
 const username = ref('');
@@ -22,13 +19,31 @@ const sendEmail = () => {
 <template>
     <p>Dersom du fyller inn NTNU-brukernavnet ditt her får du tilsendt en mail med hvilke(t) skap som er registrerte på deg.</p>
 
-    <form>
-        <FloatLabel>
-            <InputText id="username" v-model="username" />
-            <label for="username">NTNU-brukernavn</label>
-        </FloatLabel>
-        <Button class="text-m bg-green-300 p-3" label="Send e-post"></Button>
-    </form>
+    <form @submit.prevent="sendEmail" class="flex flex-col space-y-4">          
+      <!-- Username Field -->
+      <input 
+          class="bg-gray-50 text-gray-700 text-l p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+          v-model="username" 
+          autofocus
+          placeholder="NTNU-brukernavn" 
+          required 
+      />
+      
+      
+      <div class="text-right">
+          <button 
+              type="submit" 
+              class="text-white px-4 py-2 rounded-md text-subtitle-1 mt-2" 
+              :disabled="!username.trim()"
+              :class="{
+                  'bg-gray-300': !username.trim(),
+                  'bg-green-900': username.trim() 
+              }"
+          >
+              Send mail
+          </button>
+      </div>
+  </form>
 </template>
 
 <script>
