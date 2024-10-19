@@ -41,24 +41,29 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .prose h1 {
-  @apply text-blue-600 font-bold;
+  @apply text-title-1 font-poppins text-gray-700;
 }
 
 .prose h2 {
-  @apply text-green-500 font-semibold;
+  @apply text-title-2 font-poppins text-gray-700;
 }
 
 .prose ul {
-  @apply text-green-600 list-disc list-inside;
+  @apply text-pink-500 font-lato list-disc list-inside;
 }
 
 .prose ol {
-  @apply text-red-500 list-decimal list-inside;
+  @apply text-pink-500 font-lato list-decimal list-inside my-2 space-y-2;
+}
+
+.prose li p {
+  @apply inline ml-1;
 }
 
 .prose p {
-  @apply text-gray-700;
+  @apply text-gray-700 font-lato;
 }
+
 </style>

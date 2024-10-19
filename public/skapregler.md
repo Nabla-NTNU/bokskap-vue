@@ -1,4 +1,4 @@
-## Bokskapreglement ved NV-fakultetet
+# Bokskapreglement ved NV-fakultetet
 Du er underlagt de reglene som gjaldt da du registrerte skapet.
 
 *Oppdatert 2019*
