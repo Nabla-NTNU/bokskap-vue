@@ -231,7 +231,7 @@ export default {
 
       //subtitle
       'subtitle-1': ['24px', {lineHeight: '32px', fontWeight: 400}],
-      'subtitle-2': ['36px', {lineHeight: '48px', fontWeight: 500}],
+      'subtitle-2': ['20px', {lineHeight: '32px', fontWeight: 100}],
       'subtitle-3': ['32px', {lineHeight: '44px', fontWeight: 500}],
       'subtitle-4': ['28px', {lineHeight: '40px', fontWeight: 500}],
       'subtitle-5': ['24px', {lineHeight: '32px', fontWeight: 500}],
