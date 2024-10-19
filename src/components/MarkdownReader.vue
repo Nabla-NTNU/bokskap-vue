@@ -63,7 +63,7 @@ export default {
 }
 
 .prose p {
-  @apply text-gray-700 font-lato;
+  @apply text-gray-900 font-lato;
 }
 
 </style>

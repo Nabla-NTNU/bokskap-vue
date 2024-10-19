@@ -17,12 +17,14 @@ const sendEmail = () => {
 </script>
 
 <template>
-    <p>Dersom du fyller inn NTNU-brukernavnet ditt her får du tilsendt en mail med hvilke(t) skap som er registrerte på deg.</p>
+    <p class="text-title-1 font-lato text-gray-900">Glemt skapnummer?</p>
 
-    <form @submit.prevent="sendEmail" class="flex flex-col space-y-4">          
+    <p class="text-l font-lato text-gray-900">Dersom du fyller inn NTNU-brukernavnet ditt her får du tilsendt en mail med hvilket skap som er registrert på deg.</p>
+
+    <form @submit.prevent="sendEmail" class="flex flex-col space-y-4 mt-4">          
       <!-- Username Field -->
       <input 
-          class="bg-gray-50 text-gray-700 text-l p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+          class="bg-gray-50 text-gray-900 text-l p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
           v-model="username" 
           autofocus
           placeholder="NTNU-brukernavn" 
