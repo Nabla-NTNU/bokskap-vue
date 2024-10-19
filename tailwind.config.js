@@ -222,7 +222,7 @@ export default {
       's-bold': ['14px', {lineHeight: '22px', fontWeight: 700}],
 
       //title
-      'title-1': ['44px', {lineHeight: '72px', fontWeight: 700, letterSpacing: '1.5px'}],
+      'title-1': ['44px', {lineHeight: '72px', fontWeight: 700, letterSpacing: '1px'}],
       'title-2': ['48px', {lineHeight: '60px', fontWeight: 700}],
       'title-3': ['36px', {lineHeight: '48px', fontWeight: 500}],
       'title-4': ['32px', {lineHeight: '44px', fontWeight: 500}],

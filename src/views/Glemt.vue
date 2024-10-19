@@ -17,7 +17,7 @@ const sendEmail = () => {
 </script>
 
 <template>
-    <p class="text-title-1 font-lato text-gray-900">Glemt skapnummer?</p>
+    <p class="text-title-1 font-poppins text-gray-700">Glemt skapnummer?</p>
 
     <p class="text-l font-lato text-gray-900">Dersom du fyller inn NTNU-brukernavnet ditt her får du tilsendt en mail med hvilket skap som er registrert på deg.</p>
 

@@ -17,7 +17,7 @@ const unregister = () => {
 </script>
 
 <template>
-  <p class="text-title-1 font-lato text-gray-900">Avregistrering</p>
+  <p class="text-title-1 font-poppins text-gray-700">Avregistrering</p>
   
   <p class="text-l font-lato text-gray-900">Dersom du fyller inn NTNU-brukernavnet ditt her avregistreres skapet du har.</p>
 
