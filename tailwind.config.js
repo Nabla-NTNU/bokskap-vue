@@ -237,6 +237,25 @@ export default {
       'subtitle-5': ['24px', {lineHeight: '32px', fontWeight: 500}],
       'subtitle-6': ['20px', {lineHeight: '26px', fontWeight: 500}],
     },
+    screens: {
+      // Break point sizes, not on the specific screen size. lg: is on screen at least 1024px
+      // "min-[320px]:bg-sky-100 max-[600px]:bg-sky-300 is also valid, with min and max
+      // md:max-xl:flex is bigger than md and smaller than xl
+      // sm:  @media (min-width: 640px) { ... }
+      // md:  @media (min-width: 768px) { ... }
+      // lg:  @media (min-width: 1024px) { ... }
+      // xl:  @media (min-width: 1280px) { ... }
+      // 2xl: @media (min-width: 1536px) { ... }
+      '2xs': '320px',   //small phone ish
+      'xs': '440px',    //big phone ish
+      's': '640px',
+      'm': '768px',
+      'l': '1024px', 
+      'xl': '1280px',   //laptop
+      '2xl': '1536px',
+    },
+
+
 
     //only above this line have been customized and "finalized", I'll fix the rest later
 

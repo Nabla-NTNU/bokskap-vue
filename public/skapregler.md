@@ -1,4 +1,5 @@
-# Bokskapreglement ved NV-fakultetet
+# Bokskap&shy;reglement ved NV-fakultetet 
+<!-- Bruk &shy; for å legge linebreak med bindestrek som har høy prioritet -->
 Du er underlagt de reglene som gjaldt da du registrerte skapet.
 
 *Oppdatert 2019*

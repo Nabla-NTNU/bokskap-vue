@@ -1,5 +1,5 @@
 <template>
-  <div class="prose prose-lg max-w-none" v-html="renderedMarkdown"></div>
+  <div class="prose" v-html="renderedMarkdown"></div>
 </template>
 
 <script>
@@ -42,6 +42,11 @@ export default {
 </script>
 
 <style>
+.prose {
+  overflow-wrap: break-word; /* Allows long words to break onto the next line */
+  word-break: break-word;    /* Ensures long words break appropriately */
+}
+
 .prose h1 {
   @apply text-title-1 font-poppins text-gray-700;
 }

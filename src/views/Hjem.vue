@@ -33,17 +33,17 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="flex flex-col lg:flex-row items-center justify-between">
+    <div class="flex flex-col l:flex-row items-center justify-between">
         
         <!-- Information Section -->
-        <div class="text-l lg:w-[50%] w-[100%] mb-8 md:mb-0">
+        <div class="text-l l:w-[50%] w-[100%] mb-8 m:mb-0">
             <p>Bokskapene i rommene CU1-111, CU2-021 og EU1-110 i Realfagbygget. Hvilket rom skapet er registrert på står på skapet.</p>
             <p>Hvis du vil ha et skap må du gå til ett av disse rommene, sette på en hengelås og registrere deg her.</p>
             <p class="mt-8">NB! Husk å sjekke at skapet ditt faktisk står registrert som "opptatt" under skaplister etter registrering.</p>
         </div>
 
         <!-- Form Section -->
-        <div class="bg-pink-500 w-[460px] md:w-[460px] shadow-pink text-white px-8 pt-4 pb-8 rounded-[32px]">
+        <div class="bg-pink-500 w-[460px] m:w-[460px] shadow-pink text-white px-8 pt-4 pb-8 rounded-[32px]">
             <div class="text-dark font-poppins text-title-1 text-center mb-6">Reserver her</div>
             
             <form @submit.prevent="register" class="flex flex-col space-y-4">
