@@ -50,7 +50,7 @@
         <tbody>
             <tr v-for="locker in paginatedLockers" 
                 :key="locker.number + locker.room"
-                :class="locker.taken ? 'bg-red-50' : 'bg-green-50'">
+                :class="locker.taken ? 'bg-red-25 text-red-900' : 'bg-green-25 text-green-900'">
                 <td>{{ locker.room }}</td>
                 <td>{{ locker.number }}</td>
                 <td>

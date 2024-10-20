@@ -150,7 +150,7 @@
     --blue-dark: #05587A;
   
     /* Red */
-    --red-25: #FFFBF9;
+    --red-25: #feefe7; /* Changed */
     --red-50: #FBDFD3;
     --red-100: #F6C2AE;
     --red-200: #F29F84;
@@ -168,7 +168,7 @@
     --red-dark: #84120A;
   
     /* Green */
-    --green-25: #F6FEF8;
+    --green-25: #e2fae8; /* Changed */
     --green-50: #D0F7D9;
     --green-100: #ABF2BB;
     --green-200: #84EC9D;
