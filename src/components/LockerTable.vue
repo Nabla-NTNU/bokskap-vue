@@ -6,7 +6,7 @@
                 <label>
                     <select v-model="filter.room" class="p-2 border-spacing-2 border-gray-100 border-2 rounded-[4px]">
                         <option value="">Alle rom</option>
-                        <option value="CU1-021">CU1-021</option>
+                        <option value="CU2-021">CU2-021</option>
                         <option value="CU1-111">CU1-111</option>
                         <option value="EU1-110">EU1-110</option>
                     </select>
@@ -48,11 +48,20 @@
             </tr>
         </thead>
         <tbody>
-          <tr v-for="locker in paginatedLockers" :key="locker.number + locker.room">
-            <td>{{ locker.room }}</td>
-            <td>{{ locker.number }}</td>
-            <td>{{ locker.taken ? 'Opptatt' : 'Ledig' }}</td>
-          </tr>
+            <tr v-for="locker in paginatedLockers" 
+                :key="locker.number + locker.room"
+                :class="locker.taken ? 'bg-red-50' : 'bg-green-50'">
+                <td>{{ locker.room }}</td>
+                <td>{{ locker.number }}</td>
+                <td>
+                    <span v-if="locker.taken">Opptatt</span>
+                    <router-link class="underline text-green-800"
+                        v-else 
+                        :to="{ name: 'Hjem', query: { room: locker.room, locker: locker.number } }">
+                        Ledig
+                    </router-link>
+                </td>
+            </tr>
         </tbody>
       </table>
   
@@ -106,42 +115,42 @@
             { room: "CU1-111", number: "50", taken: true },
             { room: "CU1-111", number: "51", taken: true },
             { room: "CU1-111", number: "52", taken: true },
-            { room: "CU1-021", number: "1", taken: true },
-            { room: "CU1-021", number: "2", taken: true },
-            { room: "CU1-021", number: "3", taken: true },
-            { room: "CU1-021", number: "4", taken: true },
-            { room: "CU1-021", number: "5", taken: true },
-            { room: "CU1-021", number: "6", taken: true },
-            { room: "CU1-021", number: "7", taken: true },
-            { room: "CU1-021", number: "8", taken: false },
-            { room: "CU1-021", number: "9", taken: false },
-            { room: "CU1-021", number: "10", taken: true },
-            { room: "CU1-021", number: "11", taken: true },
-            { room: "CU1-021", number: "12", taken: true },
-            { room: "CU1-021", number: "21", taken: true },
-            { room: "CU1-021", number: "22", taken: true },
-            { room: "CU1-021", number: "23", taken: true },
-            { room: "CU1-021", number: "24", taken: true },
-            { room: "CU1-021", number: "25", taken: true },
-            { room: "CU1-021", number: "26", taken: true },
-            { room: "CU1-021", number: "27", taken: true },
-            { room: "CU1-021", number: "28", taken: false },
-            { room: "CU1-021", number: "29", taken: false },
-            { room: "CU1-021", number: "30", taken: true },
-            { room: "CU1-021", number: "31", taken: true },
-            { room: "CU1-021", number: "32", taken: true },
-            { room: "CU1-021", number: "41", taken: true },
-            { room: "CU1-021", number: "42", taken: true },
-            { room: "CU1-021", number: "43", taken: true },
-            { room: "CU1-021", number: "44", taken: true },
-            { room: "CU1-021", number: "45", taken: true },
-            { room: "CU1-021", number: "46", taken: true },
-            { room: "CU1-021", number: "47", taken: true },
-            { room: "CU1-021", number: "48", taken: false },
-            { room: "CU1-021", number: "49", taken: false },
-            { room: "CU1-021", number: "50", taken: true },
-            { room: "CU1-021", number: "51", taken: true },
-            { room: "CU1-021", number: "52", taken: true },
+            { room: "CU2-021", number: "1", taken: true },
+            { room: "CU2-021", number: "2", taken: true },
+            { room: "CU2-021", number: "3", taken: true },
+            { room: "CU2-021", number: "4", taken: true },
+            { room: "CU2-021", number: "5", taken: true },
+            { room: "CU2-021", number: "6", taken: true },
+            { room: "CU2-021", number: "7", taken: true },
+            { room: "CU2-021", number: "8", taken: false },
+            { room: "CU2-021", number: "9", taken: false },
+            { room: "CU2-021", number: "10", taken: true },
+            { room: "CU2-021", number: "11", taken: true },
+            { room: "CU2-021", number: "12", taken: true },
+            { room: "CU2-021", number: "21", taken: true },
+            { room: "CU2-021", number: "22", taken: true },
+            { room: "CU2-021", number: "23", taken: true },
+            { room: "CU2-021", number: "24", taken: true },
+            { room: "CU2-021", number: "25", taken: true },
+            { room: "CU2-021", number: "26", taken: true },
+            { room: "CU2-021", number: "27", taken: true },
+            { room: "CU2-021", number: "28", taken: false },
+            { room: "CU2-021", number: "29", taken: false },
+            { room: "CU2-021", number: "30", taken: true },
+            { room: "CU2-021", number: "31", taken: true },
+            { room: "CU2-021", number: "32", taken: true },
+            { room: "CU2-021", number: "41", taken: true },
+            { room: "CU2-021", number: "42", taken: true },
+            { room: "CU2-021", number: "43", taken: true },
+            { room: "CU2-021", number: "44", taken: true },
+            { room: "CU2-021", number: "45", taken: true },
+            { room: "CU2-021", number: "46", taken: true },
+            { room: "CU2-021", number: "47", taken: true },
+            { room: "CU2-021", number: "48", taken: false },
+            { room: "CU2-021", number: "49", taken: false },
+            { room: "CU2-021", number: "50", taken: true },
+            { room: "CU2-021", number: "51", taken: true },
+            { room: "CU2-021", number: "52", taken: true },
           // Add more lockers to simulate multiple pages
         ],
         filter: {

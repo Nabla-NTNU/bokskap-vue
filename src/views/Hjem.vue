@@ -1,6 +1,11 @@
 <script setup>
 
 import { ref } from 'vue';
+import { onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute(); // Make sure to use this for route querying.
+
 
 // Reactive variables for form data
 const username = ref(''); 
@@ -15,6 +20,16 @@ const register = () => {
         locker: locker.value
     });
 };
+
+// Autofill form if query params are present
+onMounted(() => {
+  if (route.query.room) {
+    selected.value = route.query.room;
+  }
+  if (route.query.locker) {
+    locker.value = parseInt(route.query.locker, 10);
+  }
+});
 </script>
 
 <template>
