@@ -22,10 +22,12 @@ const register = () => {
     });
 };
 
-// Autofill form if query params are present
+
 onMounted(() => {
     updatePlaceholder(); // Call on first render
     window.addEventListener('resize', updatePlaceholder); // Handle window resizing
+    
+    // Autofill form if query params are present
     if (route.query.room) {
         selected.value = route.query.room;
     }

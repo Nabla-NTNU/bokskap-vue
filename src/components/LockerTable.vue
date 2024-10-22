@@ -1,10 +1,30 @@
+<script setup>
+import { onMounted, onUpdated } from 'vue';
+onMounted(() => {
+    updatePlaceholder(); // Call on first render
+    window.addEventListener('resize', updatePlaceholder); // Handle window resizing
+});
+
+function updatePlaceholder() {
+  const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  const searchInput = document.getElementById('searchInput');
+  
+  if (searchInput) {
+    searchInput.placeholder = (w > 768) ? 'Søk etter rom eller nummer' : 'Søk';
+  }
+}
+
+onUpdated(() => {
+  updatePlaceholder(); // Reapply the placeholder after updates
+});
+</script>
 <template>
     <div>
-        <div class="flex flex-row justify-between space-x-2">
+        <div class="flex flex-row justify-between items-end">
             <!-- Filter Options -->
-            <div class="space-x-4 text-l">
+            <div class="text-l">
                 <label>
-                    <select v-model="filter.room" class="p-2 border-spacing-2 border-gray-100 border-2 rounded-[4px]">
+                    <select v-model="filter.room" class="p-2 border-spacing-2 border-gray-100 border-2 rounded-[8px] mr-4 mb-4">
                         <option value="">Alle rom</option>
                         <option value="CU2-021">CU2-021</option>
                         <option value="CU1-111">CU1-111</option>
@@ -13,20 +33,20 @@
                 </label>
                 
                 <label>
-                    <select v-model="filter.taken" class="p-2 border-spacing-2 border-gray-100 border-2 rounded-[4px]">
-                        <option value="all">Ledige og opptatte</option>
-                        <option value="false">Kun ledige</option>
-                        <option value="true">Kun opptatte</option>
+                    <select v-model="filter.taken" class="p-2 border-spacing-2 border-gray-100 border-2 rounded-[8px] mb-2">
+                        <option value="all">Alle skap</option>
+                        <option value="false">Ledige</option>
+                        <option value="true">Opptatte</option>
                     </select>
                 </label>
             </div>
 
             <!-- Search Input -->
-            <div class="flex items-center space-x-2 mb-4 text-l">
+            <div class="flex items-center space-x-2 text-l mb-4">
             
                 <label class="flex items-center">
                     <img class="w-[36px] mr-2" src="../assets/images/search.svg" alt="search">
-                    <input class="w-80 p-2 rounded-[4px] border-gray-100 border-2 focus:outline-none focus:ring-3 focus:ring-gray-700 focus:border-transparent" type="text" v-model="searchQuery" placeholder="Søk etter rom eller nummer" />
+                    <input id="searchInput" class="max-s:w-18 max-m:w-40 m:w-80 p-2 rounded-[4px] border-gray-100 border-2 focus:outline-none focus:ring-3 focus:ring-gray-700 focus:border-transparent" type="text" v-model="searchQuery" placeholder="" />
                 </label>
             </div>
         </div>
@@ -42,9 +62,13 @@
       <table class="table-fixed w-full mt-4 border-collapse">
         <thead class="bg-pink-300 text-white text-subtitle-2">
             <tr>
+                <!-- Mega cursed, needs a fix -->
                 <th class="w-1/3">Rom</th>
-                <th class="w-1/3">Nummer</th>
-                <th class="w-1/3">Status</th>
+                <th class="w-1/3">
+                    <span class="hidden xs:inline">Nummer</span>
+                    <span class="inline xs:hidden">Nr.</span>
+                </th>
+                <th class="w-1/3">Status</th> 
             </tr>
         </thead>
         <tbody>

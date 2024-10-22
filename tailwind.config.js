@@ -10,6 +10,32 @@ export default {
   ],
   darkMode: 'class',
   theme: {
+    extend:{
+      width: {
+        1: '4px',
+        2: '8px',
+        3: '12px',
+        4: '16px',
+        6: '24px',
+        8: '32px',
+        10: '40px',
+        12: '48px',
+        14: '56px',
+        16: '64px',
+        18: '72px',
+        20: '80px',
+        24: '96px',
+        28: '112px',
+        32: '128px',
+        40: '160px',
+        80: '320px',
+        92: '368px',
+        100: '400px',
+        120: '480px',
+        240: '960px',
+        280: '1120px',
+      },
+    },
     colors: {
       /*
       primary = Nabla blue
@@ -309,6 +335,7 @@ export default {
       240: '960px',
       280: '1120px', //MainContent width
     },
+   
     maxWidth: {
       1: '4px',
       2: '8px',
@@ -455,6 +482,7 @@ export default {
       5: '5px',
       6: '6px',
     },
+    
     plugins: [
       typography,
       forms,
