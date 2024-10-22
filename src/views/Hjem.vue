@@ -45,7 +45,7 @@ onMounted(() => {
         </div>
 
         <!-- Form Section -->
-        <div class="bg-pink-500 font-lato max-s:w-[320px] s:w-[460px] shadow-pink text-white px-8 pt-4 pb-8 rounded-[32px]">
+        <div class="bg-pink-500 font-lato max-2xs:w-[100%] max-s:w-[320px] s:w-[460px] shadow-pink text-white max-2xs:px-4 2xs:px-8 pt-4 pb-8 rounded-[32px]">
             <div class="text-light font-poppins s:text-title-1 max-s:text-smalltitle-1 text-center s:mb-6 max-s:mb-2">Reserver her</div>
             
             <form @submit.prevent="register" class="flex flex-col s:space-y-4 max-s:space-y-2">
