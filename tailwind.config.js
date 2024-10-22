@@ -240,7 +240,7 @@ export default {
       'smalltitle-3': ['36px', {lineHeight: '48px', fontWeight: 500}],
       'smalltitle-4': ['32px', {lineHeight: '44px', fontWeight: 500}],
       'smalltitle-5': ['24px', {lineHeight: '32px', fontWeight: 500}],
-      'smalltitle-6': ['20px', {lineHeight: '26px', fontWeight: 500}],
+      'smalltitle-6': ['16px', {lineHeight: '22px', fontWeight: 500}],
 
       //subtitle
       'subtitle-1': ['24px', {lineHeight: '32px', fontWeight: 400}],
