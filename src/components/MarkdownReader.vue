@@ -48,19 +48,35 @@ export default {
 }
 
 .prose h1 {
-  @apply text-title-1 font-poppins text-gray-700;
+  @apply text-title-1 max-m:text-smalltitle-1 font-poppins text-gray-700;
 }
 
 .prose h2 {
-  @apply text-title-2 font-poppins text-gray-700;
+  @apply m:text-title-2 max-m:text-smalltitle-2 font-poppins text-gray-700;
+}
+
+.prose h3 {
+  @apply m:text-title-3 max-m:text-smalltitle-3 font-poppins text-gray-700;
+}
+
+.prose h4 {
+  @apply m:text-title-4 max-m:text-smalltitle-4 font-poppins text-gray-700;
+}
+
+.prose h5 {
+  @apply m:text-title-5 max-m:text-smalltitle-5 font-poppins text-gray-700;
+}
+
+.prose h6 {
+  @apply m:text-title-6 max-m:text-smalltitle-6 font-poppins text-gray-700;
 }
 
 .prose ul {
-  @apply text-pink-500 font-lato list-disc list-inside;
+  @apply  m:text-l max-m:text-s text-pink-500 font-lato list-disc list-inside;
 }
 
 .prose ol {
-  @apply text-pink-500 font-lato list-decimal list-inside my-2 space-y-2;
+  @apply  m:text-l max-m:text-s text-pink-500 font-lato list-decimal list-inside my-2 space-y-2;
 }
 
 .prose li p {
@@ -68,7 +84,6 @@ export default {
 }
 
 .prose p {
-  @apply text-gray-900 font-lato;
+  @apply m:text-l max-m:text-s text-dark font-lato;
 }
-
 </style>

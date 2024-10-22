@@ -1,7 +1,7 @@
 :root {
     /* light means light color difference, not light color */
-    --text-color: #0C1B4A;
-    --text-dark: #FAFEFF;
+    --text-dark: #0C1B4A;
+    --text-light: #FAFEFF;
   
     /* Primary */
     --primary-25: #FAFEFF;

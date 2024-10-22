@@ -1,6 +1,6 @@
 <template>
     <header class="sticky top-0 grid-rows-1 bg-green-dark text-gray-25 font-poppins text-title-6 h-header content-center">
-      <div class="flex items-center justify-between ml-4 mr-6">
+      <div class="flex items-center justify-between pl-4 pr-6 xl:w-[1024px] mx-auto">
         <!-- Logo -->
         <router-link to="/" class="content-center mr-4">Bokskap</router-link>
   

@@ -19,7 +19,7 @@ const unregister = () => {
 <template>
   <p class="text-title-1 font-poppins text-gray-700">Avregistrering</p>
   
-  <p class="text-l font-lato text-gray-900">Dersom du fyller inn NTNU-brukernavnet ditt her avregistreres skapet du har.</p>
+  <p class="bodytext">Dersom du fyller inn NTNU-brukernavnet ditt her avregistreres skapet du har.</p>
 
   <form @submit.prevent="unregister" class="flex flex-col space-y-4 mt-4">          
       <!-- Username Field -->

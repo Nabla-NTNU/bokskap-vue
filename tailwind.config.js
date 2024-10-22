@@ -30,8 +30,8 @@ export default {
       white: 'var(--gray-25)',
       black: 'var(--gray-950)',
 
-      light: 'var(--gray-lightest)',
-      dark: 'var(--gray-darkest)',
+      light: 'var(--text-light)',
+      dark: 'var(--text-dark)',
 
       primary: {
         25: 'var(--primary-25)',
@@ -211,15 +211,20 @@ export default {
     //[fontSize, { lineHeight?, letterSpacing?, fontWeight? }]
     fontSize: { 
       //normal
-      'l': ['18px', {lineHeight: '26px'}],
-      'm': ['16px', {lineHeight: '24px'}],
+      //laptop (m)
+      'l': ['20px', {lineHeight: '28px'}],
+      'm': ['16px', {lineHeight: '22px'}],
+      //phone (max-m)
       's': ['14px', {lineHeight: '22px'}],
       't': ['10px', {lineHeight: '16px'}],
 
       //bold, only for Lato!!
+      //laptop (m)
       'l-bold': ['18px', {lineHeight: '26px', fontWeight: 700}],
-      'm-bold': ['16px', {lineHeight: '24px', fontWeight: 700}],
+      'm-bold': ['16px', {lineHeight: '22px', fontWeight: 700}],
+      //phone (max-m)
       's-bold': ['14px', {lineHeight: '22px', fontWeight: 700}],
+      't-bold': ['12px', {lineHeight: '18px', fontWeight: 700}],
 
       //title
       'title-1': ['44px', {lineHeight: '72px', fontWeight: 700, letterSpacing: '1px'}],
@@ -229,6 +234,14 @@ export default {
       'title-5': ['24px', {lineHeight: '32px', fontWeight: 500}],
       'title-6': ['20px', {lineHeight: '26px', fontWeight: 500}],
 
+      //title on phones
+      'smalltitle-1': ['34px', {lineHeight: '62px', fontWeight: 700, letterSpacing: '1px'}],
+      'smalltitle-2': ['48px', {lineHeight: '60px', fontWeight: 700}],
+      'smalltitle-3': ['36px', {lineHeight: '48px', fontWeight: 500}],
+      'smalltitle-4': ['32px', {lineHeight: '44px', fontWeight: 500}],
+      'smalltitle-5': ['24px', {lineHeight: '32px', fontWeight: 500}],
+      'smalltitle-6': ['20px', {lineHeight: '26px', fontWeight: 500}],
+
       //subtitle
       'subtitle-1': ['24px', {lineHeight: '32px', fontWeight: 400}],
       'subtitle-2': ['20px', {lineHeight: '32px', fontWeight: 100}],
@@ -236,6 +249,14 @@ export default {
       'subtitle-4': ['28px', {lineHeight: '40px', fontWeight: 500}],
       'subtitle-5': ['24px', {lineHeight: '32px', fontWeight: 500}],
       'subtitle-6': ['20px', {lineHeight: '26px', fontWeight: 500}],
+
+      //subtitle
+      'smallsubtitle-1': ['18px', {lineHeight: '24px', fontWeight: 400}],
+      'smallsubtitle-2': ['20px', {lineHeight: '32px', fontWeight: 100}],
+      'smallsubtitle-3': ['32px', {lineHeight: '44px', fontWeight: 500}],
+      'smallsubtitle-4': ['28px', {lineHeight: '40px', fontWeight: 500}],
+      'smallsubtitle-5': ['24px', {lineHeight: '32px', fontWeight: 500}],
+      'smallsubtitle-6': ['20px', {lineHeight: '26px', fontWeight: 500}],
     },
     screens: {
       // Break point sizes, not on the specific screen size. lg: is on screen at least 1024px
