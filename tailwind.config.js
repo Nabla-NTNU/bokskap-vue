@@ -447,6 +447,14 @@ export default {
       4: '0px 0px 2px rgba(0, 0, 0, 0.2)',
       5: '0px 1px 5px rgba(0, 0, 0, 0.2)'
     },
+    ringWidth: {
+      1: '1px',
+      2: '2px',
+      3: '3px',
+      4: '4px',
+      5: '5px',
+      6: '6px',
+    },
     plugins: [
       typography,
       forms,

@@ -1,8 +1,8 @@
 <template>
-    <header class="sticky top-0 grid-rows-1 bg-green-dark text-gray-25 font-poppins text-title-6 h-header content-center">
+    <header class="grid-rows-1 bg-blue-800 text-gray-25 font-poppins text-title-6 h-header content-center">
       <div class="flex items-center justify-between pl-4 pr-6 xl:w-[1024px] mx-auto">
         <!-- Logo -->
-        <router-link to="/" class="content-center mr-4">Bokskap</router-link>
+        <router-link to="/" class="content-center mr-4 text-title-5 px-2 py-1 rounded-[8px]">Bokskap</router-link>
   
         <!-- Links in header -->
         <nav class="flex flex-row">
@@ -23,7 +23,7 @@
           </div>
         </nav>
       </div>
-      <nav :class="{'hidden': !isMenuOpen, 'block': isMenuOpen}" class="m:hidden absolute z-999999 bg-green-900 p-4 text-white top-[64px] -right-1 m:flex m:flex-row m:items-top rounded-es-[16px] pb-6">
+      <nav :class="{'hidden': !isMenuOpen, 'block': isMenuOpen}" class="m:hidden absolute z-999999 bg-blue-900 p-4 text-white top-[64px] -right-1 m:flex m:flex-row m:items-top rounded-es-[16px] pb-6">
         <ul class="m:flex flex-col space-y-6">
             <li>
                 <router-link @click="toggleMenu" to="/skapregler" class="content-center px-2 py-1 rounded-[8px]">Skapregler</router-link>
@@ -60,17 +60,16 @@
   </script>
   
 <style scoped>
-/* Add styles for hover effects and pointer cursor */
-nav a {
-    transition: background-color 0.3s ease;
+a {
+  transition: background-color 0.3s ease;
 }
 
-nav a:hover {
-    background-color: theme('colors.green.600');
+a:hover {
+  background-color: theme('colors.blue.600');
 }
 
 button {
-    cursor: pointer; /* Show a hand cursor on the button */
+  cursor: pointer; 
 }
 </style>
   

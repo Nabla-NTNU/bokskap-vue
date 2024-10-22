@@ -26,7 +26,7 @@
             
                 <label class="flex items-center">
                     <img class="w-[36px] mr-2" src="../assets/images/search.svg" alt="search">
-                    <input class="w-80 p-2 rounded-[4px] border-gray-100 border-2 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent" type="text" v-model="searchQuery" placeholder="Søk etter rom eller nummer" />
+                    <input class="w-80 p-2 rounded-[4px] border-gray-100 border-2 focus:outline-none focus:ring-3 focus:ring-gray-700 focus:border-transparent" type="text" v-model="searchQuery" placeholder="Søk etter rom eller nummer" />
                 </label>
             </div>
         </div>

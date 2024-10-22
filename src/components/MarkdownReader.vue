@@ -72,11 +72,11 @@ export default {
 }
 
 .prose ul {
-  @apply  m:text-l max-m:text-s text-pink-500 font-lato list-disc list-inside;
+  @apply  m:text-l max-m:text-s text-blue-500 font-lato list-disc list-inside;
 }
 
 .prose ol {
-  @apply  m:text-l max-m:text-s text-pink-500 font-lato list-decimal list-inside my-2 space-y-2;
+  @apply  m:text-l max-m:text-s text-blue-500 font-lato list-decimal list-inside my-2 space-y-2;
 }
 
 .prose li p {

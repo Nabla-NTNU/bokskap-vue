@@ -1,8 +1,9 @@
 <script setup>
 
 import { ref } from 'vue';
-import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import { onMounted, onUpdated } from 'vue';
+
 
 const route = useRoute(); // Make sure to use this for route querying.
 
@@ -23,12 +24,27 @@ const register = () => {
 
 // Autofill form if query params are present
 onMounted(() => {
-  if (route.query.room) {
-    selected.value = route.query.room;
+    updatePlaceholder(); // Call on first render
+    window.addEventListener('resize', updatePlaceholder); // Handle window resizing
+    if (route.query.room) {
+        selected.value = route.query.room;
+    }
+    if (route.query.locker) {
+        locker.value = parseInt(route.query.locker, 10);
+    }
+});
+
+function updatePlaceholder() {
+  const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  const lockerInput = document.getElementById('lockerInput');
+  
+  if (lockerInput) {
+    lockerInput.placeholder = (w > 640) ? 'Skapnummer' : 'Skapnr.';
   }
-  if (route.query.locker) {
-    locker.value = parseInt(route.query.locker, 10);
-  }
+}
+
+onUpdated(() => {
+  updatePlaceholder(); // Reapply the placeholder after updates
 });
 </script>
 
@@ -45,14 +61,14 @@ onMounted(() => {
         </div>
 
         <!-- Form Section -->
-        <div class="bg-pink-500 font-lato max-2xs:w-[100%] max-s:w-[320px] s:w-[460px] shadow-pink text-white max-2xs:px-4 2xs:px-8 pt-4 pb-8 rounded-[32px]">
+        <div class="bg-pink-300 font-lato max-2xs:w-[100%] max-s:w-[320px] s:w-[460px] shadow-pink text-white max-2xs:px-4 2xs:px-8 pt-4 pb-8 rounded-[32px]">
             <div class="text-light font-poppins s:text-title-1 max-s:text-smalltitle-1 text-center s:mb-6 max-s:mb-2">Reserver her</div>
             
             <form @submit.prevent="register" class="flex flex-col s:space-y-4 max-s:space-y-2">
                 
                 <!-- Username Field -->
                 <input 
-                    class="bg-blue-25 text-gray-700 s:text-l max-s:text-s p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-700 max-s:mb-1"
+                    class="bg-blue-25 text-gray-700 s:text-l max-s:text-s p-2 rounded-md focus:outline-none focus:ring-3 focus:ring-pink-700 max-s:mb-1"
                     v-model="username" 
                     autofocus
                     placeholder="NTNU-brukernavn" 
@@ -62,7 +78,7 @@ onMounted(() => {
                 <div class="flex justify-between">
                     <!-- Select Field -->
                     <select 
-                        class="bg-blue-25 text-gray-700 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-700 s:w-[140px] max-s:w-[100px]"
+                        class="bg-blue-25 text-gray-700 p-2 rounded-md focus:outline-none focus:ring-3 focus:ring-pink-700 s:w-[140px] max-s:w-[100px]"
                         v-model="selected" 
                         required
                         style=""
@@ -76,7 +92,7 @@ onMounted(() => {
                     <!-- Locker Field (Number) -->
                     <input 
                         id="lockerInput" 
-                        class="bg-blue-25 text-gray-700 text-l p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-700"
+                        class="bg-blue-25 text-gray-700 text-l p-2 rounded-md focus:outline-none focus:ring-3 focus:ring-pink-700"
                         v-model="locker" 
                         type="number" 
                         name="skap"
@@ -90,11 +106,11 @@ onMounted(() => {
                 <div class="text-right">
                     <button 
                         type="submit" 
-                        class="text-white px-4 py-2 rounded-md s:text-subtitle-1 max-s:text-smallsubtitle-1" 
+                        class="px-4 py-2 rounded-md s:text-subtitle-1 max-s:text-smallsubtitle-1" 
                         :disabled="!username.trim() || !selected || locker === null || locker < 1"
                         :class="{
-                            'bg-gray-300': !username.trim() || !selected || locker === null || locker < 1,
-                            'bg-green-900': username.trim() && selected && locker !== null && locker > 0
+                            'text-gray-400 bg-gray-200': !username.trim() || !selected || locker === null || locker < 1,
+                            'text-white bg-blue-800': username.trim() && selected && locker !== null && locker > 0
                         }"
                     >
                         Registrer
@@ -140,22 +156,9 @@ input:valid, select:valid {
 </style>
 
 <script>
-function updatePlaceholder() {
-  var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-      lockerInput = document.getElementById('lockerInput');
-  
-  if (lockerInput) { // Ensure the element exists
-    if (w > 640) {
-      lockerInput.placeholder = 'Skapnummer';
-    } else {
-      lockerInput.placeholder = 'Skapnr.';
-    }
-  }
-}
 
-updatePlaceholder();
 
-window.addEventListener('resize', updatePlaceholder);
+
 
 
 

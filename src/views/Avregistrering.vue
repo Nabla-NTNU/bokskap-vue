@@ -24,7 +24,7 @@ const unregister = () => {
   <form @submit.prevent="unregister" class="flex flex-col space-y-4 mt-4">          
       <!-- Username Field -->
       <input 
-          class="bg-gray-50 text-gray-900 text-l p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+          class="bg-gray-50 text-gray-900 text-l p-2 rounded-md focus:outline-none focus:ring-3 focus:ring-blue-700"
           v-model="username" 
           autofocus
           placeholder="NTNU-brukernavn" 
@@ -40,7 +40,7 @@ const unregister = () => {
               :disabled="!username.trim()"
               :class="{
                   'bg-gray-300': !username.trim(),
-                  'bg-green-900': username.trim() 
+                  'bg-blue-800': username.trim() 
               }"
           >
               Avregistrer
