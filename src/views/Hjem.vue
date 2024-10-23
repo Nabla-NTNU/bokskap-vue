@@ -72,6 +72,7 @@ onUpdated(() => {
                 <input 
                     class="bg-blue-25 text-gray-700 s:text-l max-s:text-s p-2 rounded-md focus:outline-none focus:ring-3 focus:ring-pink-700 max-s:mb-1"
                     v-model="username" 
+                    spellcheck="false"
                     autofocus
                     placeholder="NTNU-brukernavn" 
                     required 

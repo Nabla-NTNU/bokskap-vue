@@ -1,8 +1,8 @@
 <template>
-    <header class="grid-rows-1 bg-blue-800 text-gray-25 font-poppins text-title-6 h-header content-center">
+    <header class="sticky top-0 grid-rows-1 bg-blue-800 text-gray-25 font-poppins text-title-6 h-header content-center">
       <div class="flex items-center justify-between pl-4 pr-6 xl:w-[1024px] mx-auto">
         <!-- Logo -->
-        <router-link to="/" class="content-center mr-4 text-title-5 px-2 py-1 rounded-[8px]">Bokskap</router-link>
+        <router-link to="/" class="mr-4 text-title-5 px-2 py-1 rounded-[8px]">Bokskap</router-link>
   
         <!-- Links in header -->
         <nav class="flex flex-row">
