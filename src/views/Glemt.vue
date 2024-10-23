@@ -35,11 +35,11 @@ const sendEmail = () => {
       <div class="text-right">
           <button 
               type="submit" 
-              class="text-white px-4 py-2 rounded-md text-subtitle-1 mt-2" 
+              class="px-4 py-2 rounded-md text-subtitle-1 mt-2" 
               :disabled="!username.trim()"
               :class="{
-                  'bg-gray-300': !username.trim(),
-                  'bg-blue-800': username.trim() 
+                  'text-gray-400 bg-gray-200': !username.trim(),
+                  'text-white bg-blue-800': username.trim() 
               }"
           >
               Send mail
