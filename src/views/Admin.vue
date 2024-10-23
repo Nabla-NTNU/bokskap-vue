@@ -20,7 +20,7 @@
     -->
 
   <div>
-    <div class="text-title-1">Endre skapregler.md</div>
+    <div class="text-title-1">Endre skapregler.md</div> 
     
     <!-- Textarea for editing the markdown content -->
     <textarea class="w-full my-10 border-2 border-secondary-300 p-2 rounded-md focus:border-transparent focus:outline-none focus:ring-3 focus:ring-secondary-600" spellcheck="false" v-model="markdownContent" rows="10"></textarea>
