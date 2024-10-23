@@ -1,13 +1,24 @@
 <template>
    <!-- 
+    Legg til nytt rom,
     Legge til et nytt skap, 
+    Melde skade på skap,
+    Se anmeldte skap,
+
     Fjerne skap, 
-    Fjerne eierskap (folk som går ut automatisk i september etter avgang?), 
+    Fjerne eierskap til skap,
+
     Redigere regler,
     Tabell med all info om skapene som kan eksporteres? (room, number, taken, owner, previous_owner, registration_date, previous_owner_unregistration_date)
+    
     Se hvor mange ledige skap som finnes, 
     Se hvor mange opptatte,
+    
+    Sende mail om klipping,
+    Sende purremail om klipping for de som ikke "svarte" første mail,
+    Avregistrere brukere som ikke "svarer" mail,
     -->
+
   <div>
     <div class="text-title-1">Endre skapregler.md</div>
     
