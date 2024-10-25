@@ -1,23 +1,3 @@
-<script setup>
-import { onMounted, onUpdated } from 'vue';
-onMounted(() => {
-    updatePlaceholder(); // Call on first render
-    window.addEventListener('resize', updatePlaceholder); // Handle window resizing
-});
-
-function updatePlaceholder() {
-  const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  const searchInput = document.getElementById('searchInput');
-  
-  if (searchInput) {
-    searchInput.placeholder = (w > 768) ? 'Søk etter rom eller nummer' : 'Søk';
-  }
-}
-
-onUpdated(() => {
-  updatePlaceholder(); // Reapply the placeholder after updates
-});
-</script>
 <template>
     <div>
         <div class="flex flex-row justify-between items-end">
@@ -96,87 +76,15 @@ onUpdated(() => {
         <button class="mx-4 text-[32px]" @click="nextPage" :disabled="currentPage === totalPages" :class="{'text-transparent': currentPage === totalPages,'text-pink-600': currentPage !== totalPages}">🡒</button>
       </div>
     </div>
-  </template>
+</template>
   
-  <script>
+<script>
+    import { supabase } from '@/lib/supabase'
+
   export default {
     data() {
       return {
-        lockers: [
-            { room: "CU1-111", number: "1", taken: true },
-            { room: "CU1-111", number: "2", taken: true },
-            { room: "CU1-111", number: "3", taken: true },
-            { room: "CU1-111", number: "4", taken: true },
-            { room: "CU1-111", number: "5", taken: true },
-            { room: "CU1-111", number: "6", taken: true },
-            { room: "CU1-111", number: "7", taken: true },
-            { room: "CU1-111", number: "8", taken: false },
-            { room: "CU1-111", number: "9", taken: false },
-            { room: "CU1-111", number: "10", taken: true },
-            { room: "CU1-111", number: "11", taken: true },
-            { room: "CU1-111", number: "12", taken: true },
-            { room: "CU1-111", number: "21", taken: true },
-            { room: "CU1-111", number: "22", taken: true },
-            { room: "CU1-111", number: "23", taken: true },
-            { room: "CU1-111", number: "24", taken: true },
-            { room: "CU1-111", number: "25", taken: true },
-            { room: "CU1-111", number: "26", taken: true },
-            { room: "CU1-111", number: "27", taken: true },
-            { room: "CU1-111", number: "28", taken: false },
-            { room: "CU1-111", number: "29", taken: false },
-            { room: "CU1-111", number: "30", taken: true },
-            { room: "CU1-111", number: "31", taken: true },
-            { room: "CU1-111", number: "32", taken: true },
-            { room: "CU1-111", number: "41", taken: true },
-            { room: "CU1-111", number: "42", taken: true },
-            { room: "CU1-111", number: "43", taken: true },
-            { room: "CU1-111", number: "44", taken: true },
-            { room: "CU1-111", number: "45", taken: true },
-            { room: "CU1-111", number: "46", taken: true },
-            { room: "CU1-111", number: "47", taken: true },
-            { room: "CU1-111", number: "48", taken: false },
-            { room: "CU1-111", number: "49", taken: false },
-            { room: "CU1-111", number: "50", taken: true },
-            { room: "CU1-111", number: "51", taken: true },
-            { room: "CU1-111", number: "52", taken: true },
-            { room: "CU2-021", number: "1", taken: true },
-            { room: "CU2-021", number: "2", taken: true },
-            { room: "CU2-021", number: "3", taken: true },
-            { room: "CU2-021", number: "4", taken: true },
-            { room: "CU2-021", number: "5", taken: true },
-            { room: "CU2-021", number: "6", taken: true },
-            { room: "CU2-021", number: "7", taken: true },
-            { room: "CU2-021", number: "8", taken: false },
-            { room: "CU2-021", number: "9", taken: false },
-            { room: "CU2-021", number: "10", taken: true },
-            { room: "CU2-021", number: "11", taken: true },
-            { room: "CU2-021", number: "12", taken: true },
-            { room: "CU2-021", number: "21", taken: true },
-            { room: "CU2-021", number: "22", taken: true },
-            { room: "CU2-021", number: "23", taken: true },
-            { room: "CU2-021", number: "24", taken: true },
-            { room: "CU2-021", number: "25", taken: true },
-            { room: "CU2-021", number: "26", taken: true },
-            { room: "CU2-021", number: "27", taken: true },
-            { room: "CU2-021", number: "28", taken: false },
-            { room: "CU2-021", number: "29", taken: false },
-            { room: "CU2-021", number: "30", taken: true },
-            { room: "CU2-021", number: "31", taken: true },
-            { room: "CU2-021", number: "32", taken: true },
-            { room: "CU2-021", number: "41", taken: true },
-            { room: "CU2-021", number: "42", taken: true },
-            { room: "CU2-021", number: "43", taken: true },
-            { room: "CU2-021", number: "44", taken: true },
-            { room: "CU2-021", number: "45", taken: true },
-            { room: "CU2-021", number: "46", taken: true },
-            { room: "CU2-021", number: "47", taken: true },
-            { room: "CU2-021", number: "48", taken: false },
-            { room: "CU2-021", number: "49", taken: false },
-            { room: "CU2-021", number: "50", taken: true },
-            { room: "CU2-021", number: "51", taken: true },
-            { room: "CU2-021", number: "52", taken: true },
-          // Add more lockers to simulate multiple pages
-        ],
+        lockers: [],
         filter: {
           taken: 'all', // can be 'all', 'true' or 'false'
           room: ''      // empty means no room filter
@@ -240,7 +148,40 @@ onUpdated(() => {
             if (this.currentPage < this.totalPages) {
             this.currentPage++;
             }
+        },
+
+        updatePlaceholder() {
+            const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            const searchInput = document.getElementById('searchInput');
+            
+            if (searchInput) {
+                searchInput.placeholder = (w > 768) ? 'Søk etter rom eller nummer' : 'Søk';
+            }
+        },
+
+        async getLockers() {
+            const { data, error } = await supabase
+                .from('locker_locker_status')
+                .select('room,number:locker_number,taken');
+            
+            this.lockers = data;
+            
+            if (error) {
+                alert(`An error has occured: ${error.message}`);
+            }
         }
+
+    },
+
+    mounted() {
+        this.updatePlaceholder(); // Call on first render
+        window.addEventListener('resize', this.updatePlaceholder); // Handle window resizing
+
+        this.getLockers();
+    },
+
+    updated() {
+        this.updatePlaceholder(); // Reapply the placeholder after updates
     }
 };
 </script>
