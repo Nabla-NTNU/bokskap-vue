@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.0.5",
+    "@supabase/supabase-js": "^2.45.6",
     "postcss-import": "^16.1.0",
     "primevue": "^4.1.1",
     "tailwind": "^4.0.0",
